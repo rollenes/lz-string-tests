@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="lz-string.min.js"></script>
+
+</head>
+<body>
+    <form>
+        <textarea id="toCompress"></textarea><br>
+        <a id="compress">Compress</a><br>
+        <textarea id="compressed"></textarea><br>
+    </form>
+    <script>
+
+        document.getElementById('compress').onclick = function() {
+            var base64Compressed = LZString.compressToBase64(document.getElementById('toCompress').value);
+            document.getElementById('compressed').value = base64Compressed
+        }
+
+    </script>
+</body>
+</html>
