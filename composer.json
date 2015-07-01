@@ -7,5 +7,22 @@
             "email": "rafal.wartalski@gmail.com"
         }
     ],
-    "require": {}
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "nullpunkt/lz-string-php",
+                "version": "1.0",
+                "source": {
+                    "url": "git@github.com:nullpunkt/lz-string-php.git",
+                    "type": "git",
+                    "reference": "b30e0c6556ee5a0e75c2f3df7fce2f8bc89c53ad"
+                }
+            }
+        }
+    ],
+    "require": {
+        "nullpunkt/lz-string-php": "^1.0",
+        "phpunit/phpunit": "^4.7"
+    }
 }
