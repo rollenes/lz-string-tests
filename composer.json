@@ -1,0 +1,11 @@
+{
+    "name": "rollenes/lz-string-tests",
+    "description": "LZ String tests",
+    "authors": [
+        {
+            "name": "Rafał Wartalski",
+            "email": "rafal.wartalski@gmail.com"
+        }
+    ],
+    "require": {}
+}
