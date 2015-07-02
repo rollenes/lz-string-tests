@@ -1,9 +1,18 @@
 <?php
 
-class InitialTest extends PHPUnit_Framework_TestCase
+class InitialTest extends PHPUnit_Extensions_SeleniumTestCase
 {
-    public function testInit()
+    protected function setUp()
     {
-        class_exists('LZString');
+        $this->setBrowser('*firefox');
+        $indexPath = 'http://localhost:1230';
+        $this->setBrowserUrl($indexPath);
+    }
+
+    public function testTitle()
+    {
+        $indexPath = 'http://localhost:1230';
+        $this->open($indexPath);
+        $this->assertTitle('Compress me');
     }
 } 
