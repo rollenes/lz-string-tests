@@ -17,6 +17,9 @@
                     "url": "git@github.com:nullpunkt/lz-string-php.git",
                     "type": "git",
                     "reference": "b30e0c6556ee5a0e75c2f3df7fce2f8bc89c53ad"
+                },
+                "autoload": {
+                    "files": ["src/LZString.php"]
                 }
             }
         }
