@@ -2,11 +2,12 @@
 
 class CompressDecompressTest extends PHPUnit_Extensions_SeleniumTestCase
 {
+    private $browserPath = 'http://localhost:1230';
+
     protected function setUp()
     {
         $this->setBrowser('*firefox');
-        $indexPath = 'http://localhost:1230';
-        $this->setBrowserUrl($indexPath);
+        $this->setBrowserUrl($this->browserPath);
     }
 
     /**
@@ -14,8 +15,7 @@ class CompressDecompressTest extends PHPUnit_Extensions_SeleniumTestCase
      */
     public function testJs2Php($input)
     {
-        $indexPath = 'http://localhost:1230';
-        $this->open($indexPath);
+        $this->open($this->browserPath);
 
         $this->type('toCompress', $input);
 
@@ -30,7 +30,8 @@ class CompressDecompressTest extends PHPUnit_Extensions_SeleniumTestCase
     {
         return [
             ['mama'],
-            ['tata']
+            ['tata'],
+            ['ąść']
         ];
     }
 }
