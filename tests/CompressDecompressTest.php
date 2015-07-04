@@ -10,7 +10,7 @@ class CompressDecompressTest extends PHPUnit_Extensions_SeleniumTestCase
     }
 
     /**
-     * @dataProvider testDataProvider
+     * @dataProvider dataProvider
      */
     public function testJs2Php($input)
     {
@@ -26,11 +26,11 @@ class CompressDecompressTest extends PHPUnit_Extensions_SeleniumTestCase
         $this->assertEquals($input, $decompressed);
     }
 
-    public function testDataProvider()
+    public function dataProvider()
     {
         return [
             ['mama'],
             ['tata']
         ];
     }
-} 
+}
