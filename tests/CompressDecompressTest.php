@@ -9,17 +9,28 @@ class CompressDecompressTest extends PHPUnit_Extensions_SeleniumTestCase
         $this->setBrowserUrl($indexPath);
     }
 
-    public function testJs2Php()
+    /**
+     * @dataProvider testDataProvider
+     */
+    public function testJs2Php($input)
     {
         $indexPath = 'http://localhost:1230';
         $this->open($indexPath);
 
-        $this->type('toCompress', 'mama');
+        $this->type('toCompress', $input);
 
         $this->click('compress');
 
         $decompressed = \LZString::decompressFromBase64($this->getValue('compressed'));
 
-        $this->assertEquals('mama', $decompressed);
+        $this->assertEquals($input, $decompressed);
+    }
+
+    public function testDataProvider()
+    {
+        return [
+            ['mama'],
+            ['tata']
+        ];
     }
 } 
